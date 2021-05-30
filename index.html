@@ -5,7 +5,6 @@
 
 <!-- Chart code -->
 <script>
- 
 am4core.ready(function() {
 
 // Themes begin
@@ -87,27 +86,31 @@ chart.zoomOutButton.disabled = true;
 series.columns.template.adapter.add("fill", function (fill, target) {
  return chart.colors.getIndex(target.dataItem.index);
 });
- 
+
 setInterval(function () {
  am4core.array.each(chart.data, function (item) {
    item.visits += Math.round(Math.random() * 200 - 100);
    item.visits = Math.abs(item.visits);
  })
  chart.invalidateRawData();
-}, 20000)
+}, 2000)
 
 categoryAxis.sortBySeries = series;
 
 }); // end am4core.ready()
- 
-var buttonChange = document.getElementById("buttonChange");
-buttonChange.onclick = function(){
+</script>
+
+<script>
+ var buttonChange = document.getElementById("buttonChange");
+ buttonChange.onclick = function () {
  am4core.array.each(chart.data, function (item) {
-  item.visits += Math.round(Math.random() * 200 - 100);
-  item.visits = Math.abs(item.visits);
- };
+   item.visits += Math.round(Math.random() * 200 - 100);
+   item.visits = Math.abs(item.visits);
+ })
+ chart.invalidateRawData();
+}
 </script>
 
 <!-- HTML -->
 <div id="chartdiv"></div>
-<button id="changeButton"></button>
+<button id="buttonChange"></button>

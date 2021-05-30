@@ -86,14 +86,22 @@ chart.zoomOutButton.disabled = true;
 series.columns.template.adapter.add("fill", function (fill, target) {
  return chart.colors.getIndex(target.dataItem.index);
 });
-
+ 
+ var buttonChange = document.getElementById("buttonChange");
+ buttonChange.onclick = function(){
+  am4core.array.each(chart.data, function (item) {
+   item.visits += Math.round(Math.random() * 200 - 100);
+   item.visits = Math.abs(item.visits);
+  }
+  
+ 
 setInterval(function () {
  am4core.array.each(chart.data, function (item) {
    item.visits += Math.round(Math.random() * 200 - 100);
    item.visits = Math.abs(item.visits);
  })
  chart.invalidateRawData();
-}, 2000)
+}, 2000000)
 
 categoryAxis.sortBySeries = series;
 

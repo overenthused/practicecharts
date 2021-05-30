@@ -96,10 +96,8 @@ setInterval(function () {
 }, 20000)
 
 categoryAxis.sortBySeries = series;
-
-}); // end am4core.ready()
  
- var buttonChange = document.getElementById("buttonChange");
+var buttonChange = document.getElementById("buttonChange");
  buttonChange.onclick = function () {
  am4core.array.each(chart.data, function (item) {
    item.visits += Math.round(Math.random() * 200 - 100);
@@ -107,6 +105,10 @@ categoryAxis.sortBySeries = series;
  })
  chart.invalidateRawData();
 }
+ 
+}); // end am4core.ready()
+ 
+ 
 </script>
 
 <script>

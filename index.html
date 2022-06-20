@@ -2,6 +2,8 @@
 <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
 
 <!-- Chart code -->
 <script>
@@ -116,5 +118,10 @@ var buttonChange = document.getElementById("buttonChange");
 </script>
 
 <!-- HTML -->
+<body>
+    <py-script>
+         print("Hello World!")
+    </py-script>
+</body>
 <div id="chartdiv"></div>
 <button id="buttonChange"></button>

@@ -172,6 +172,12 @@ series.data.setAll(debutData);
 series.appear(1000);
 chart.appear(1000, 100);
   
+debutButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, debutData[index]);
+  }
+};
+  
 fearlessButton.onclick = function () { 
   for (let index = 0; index < 4; ++index) {
     series.data.setIndex(index, fearlessData[index]);

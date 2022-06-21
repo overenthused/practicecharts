@@ -18,7 +18,8 @@
 .button-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   flex-grow: 2;
   width: 150px;
 }
@@ -168,8 +169,7 @@ chart.appear(1000, 100);
   
 fearlessButton.onclick = function () { 
   for (let index = 0; index < 3; ++index) {
-    const element = fearlessData[index];
-    series.data.setIndex(index, element);
+    series.data.setIndex(index, fearlessData[index]);
   }
 };
   

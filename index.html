@@ -5,14 +5,39 @@
   height: 500px;
   flex-grow: 4;
 }
-  
-#fearlessButton {
-  background-color: #ffcc00;
-}
-  
 #debutButton {
   background-color: #00cc00;  
 }
+#fearlessButton {
+  background-color: #ffcc00;
+}
+#speakNowButton {
+  background-color: #cc33ff;  
+}
+#redButton {
+  background-color: #cc3300;
+}
+#nineButton {
+  background-color: #0099ff;  
+}
+#reputationButton {
+  background-color: #333333;
+  color: #ffffff;
+}
+#loverButton {
+  background-color: #ffccff;  
+}
+#folkloreButton {
+  background-color: #a6a6a6;  
+}
+#evermoreButton {
+  background-color: #ffb380;
+}
+#randomButton {
+  background-color: #ffffcc;  
+}
+  
+
   
 .biggest-container {
   display: flex;
@@ -39,7 +64,7 @@
 }
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-device-width: 800px) {
   .biggest-container {
     flex-direction: column;
   }
@@ -165,10 +190,116 @@ var fearlessData = [{
   category: "Aesthetic",
   rating: 4
 }];
+  
+var speakNowData = [{
+  category: "Musicality",
+  rating: 3.5
+}, {
+  category: "Lyrics",
+  rating: 3.5
+}, {
+  category: "Enjoyment",
+  rating: 4
+}, {
+  category: "Aesthetic",
+  rating: 5
+}];
+  
+var redData = [{
+  category: "Musicality",
+  rating: 4
+}, {
+  category: "Lyrics",
+  rating: 5
+}, {
+  category: "Enjoyment",
+  rating: 3.5
+}, {
+  category: "Aesthetic",
+  rating: 4.5
+}];
+  
+var nineData = [{
+  category: "Musicality",
+  rating: 5
+}, {
+  category: "Lyrics",
+  rating: 2.5
+}, {
+  category: "Enjoyment",
+  rating: 5
+}, {
+  category: "Aesthetic",
+  rating: 4
+}];
+  
+var reputationData = [{
+  category: "Musicality",
+  rating: 3.5
+}, {
+  category: "Lyrics",
+  rating: 3
+}, {
+  category: "Enjoyment",
+  rating: 3
+}, {
+  category: "Aesthetic",
+  rating: 2
+}];
+  
+var loverData = [{
+  category: "Musicality",
+  rating: 4
+}, {
+  category: "Lyrics",
+  rating: 4
+}, {
+  category: "Enjoyment",
+  rating: 4
+}, {
+  category: "Aesthetic",
+  rating: 4
+}];
+  
+var folkloreData = [{
+  category: "Musicality",
+  rating: 5
+}, {
+  category: "Lyrics",
+  rating: 5
+}, {
+  category: "Enjoyment",
+  rating: 5
+}, {
+  category: "Aesthetic",
+  rating: 5
+}];
+  
+var evermoreData = [{
+  category: "Musicality",
+  rating: 5
+}, {
+  category: "Lyrics",
+  rating: 5
+}, {
+  category: "Enjoyment",
+  rating: 5
+}, {
+  category: "Aesthetic",
+  rating: 5
+}];
+  
+var categoryLabels = [
+  "Musicality",
+  "Lyrics",
+  "Enjoyment",
+  "Aesthetic"
+];
 
 xAxis.data.setAll(debutData);
 series.data.setAll(debutData);
 
+ 
 
 // Make stuff animate on load
 // https://www.amcharts.com/docs/v5/concepts/animations/
@@ -184,6 +315,57 @@ debutButton.onclick = function () {
 fearlessButton.onclick = function () { 
   for (let index = 0; index < 4; ++index) {
     series.data.setIndex(index, fearlessData[index]);
+  }
+};
+  
+speakNowButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, speakNowData[index]);
+  }
+};
+  
+redButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, redData[index]);
+  }
+};
+  
+nineButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, nineData[index]);
+  }
+};
+  
+reputationButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, reputationData[index]);
+  }
+};
+  
+loverButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, loverData[index]);
+  }
+};
+  
+folkloreButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, folkloreData[index]);
+  }
+};
+  
+evermoreButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, evermoreData[index]);
+  }
+};
+  
+evermoreButton.onclick = function () { 
+  for (let index = 0; index < 4; ++index) {
+    series.data.setIndex(index, {
+      category: categoryLabels[index]
+      rating: (Math.random() * 5)
+    });
   }
 };
   

@@ -136,6 +136,13 @@ fearlessButton.onclick = function () {
     rating: 4
   });
 }
+  
+setInterval(function() {
+  series.data.setIndex(1, {
+    category: "Marketing",
+    value: (Math.random() * 5)
+  });
+}, 2000)
 </script>
 
 <!-- HTML -->

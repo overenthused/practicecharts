@@ -129,7 +129,13 @@ series.appear(1000);
 chart.appear(1000, 100);
 
 }); // end am5.ready()
+  
+fearlessButton.onclick = function () { 
+  xAxis.data.setAll(fearlessData);
+  series.data.setAll(fearlessData);
+}
 </script>
 
 <!-- HTML -->
 <div id="chartdiv"></div>
+<button id="fearlessButton">Fearless</button>

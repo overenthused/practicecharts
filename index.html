@@ -62,6 +62,8 @@ var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
 
 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
   maxDeviation: 0.3,
+  min: 0,
+  max: 5,
   renderer: am5xy.AxisRendererY.new(root, {})
 }));
 
@@ -75,8 +77,8 @@ var series = chart.series.push(am5xy.ColumnSeries.new(root, {
   valueYField: "rating",
   sequencedInterpolation: true,
   categoryXField: "category",
-  interpolationDuration: 2000,
-  interpolationEasing: am5.ease.inOut(am5.ease.elastic),
+  interpolationDuration: 1000,
+  interpolationEasing: am5.ease.inOut(am5.ease.cubic),
   tooltip: am5.Tooltip.new(root, {
     labelText:"{valueY}"
   })

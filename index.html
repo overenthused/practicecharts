@@ -91,7 +91,7 @@ series.columns.template.adapters.add("stroke", function(stroke, target) {
 
 
 // Set data
-var data = [{
+var debutData = [{
   category: "Musicality",
   rating: 4
 }, {
@@ -104,9 +104,23 @@ var data = [{
   category: "Aesthetic",
   rating: 2
 }];
+  
+var fearlessData = [{
+  category: "Musicality",
+  rating: 4
+}, {
+  category: "Lyrics",
+  rating: 3
+}, {
+  category: "Enjoyment",
+  rating: 4.5
+}, {
+  category: "Aesthetic",
+  rating: 4
+}];
 
-xAxis.data.setAll(data);
-series.data.setAll(data);
+xAxis.data.setAll(debutData);
+series.data.setAll(debutData);
 
 
 // Make stuff animate on load

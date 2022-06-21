@@ -55,7 +55,7 @@ xRenderer.labels.template.setAll({
 
 var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
   maxDeviation: 0.3,
-  categoryField: "country",
+  categoryField: "category",
   renderer: xRenderer,
   tooltip: am5.Tooltip.new(root, {})
 }));
@@ -72,9 +72,9 @@ var series = chart.series.push(am5xy.ColumnSeries.new(root, {
   name: "Series 1",
   xAxis: xAxis,
   yAxis: yAxis,
-  valueYField: "value",
+  valueYField: "rating",
   sequencedInterpolation: true,
-  categoryXField: "country",
+  categoryXField: "category",
   tooltip: am5.Tooltip.new(root, {
     labelText:"{valueY}"
   })
@@ -92,41 +92,17 @@ series.columns.template.adapters.add("stroke", function(stroke, target) {
 
 // Set data
 var data = [{
-  country: "USA",
-  value: 2025
+  category: "Musicality",
+  rating: 4
 }, {
-  country: "China",
-  value: 1882
+  category: "Lyrics",
+  rating: 2.5
 }, {
-  country: "Japan",
-  value: 1809
+  category: "Enjoyment",
+  rating: 4
 }, {
-  country: "Germany",
-  value: 1322
-}, {
-  country: "UK",
-  value: 1122
-}, {
-  country: "France",
-  value: 1114
-}, {
-  country: "India",
-  value: 984
-}, {
-  country: "Spain",
-  value: 711
-}, {
-  country: "Netherlands",
-  value: 665
-}, {
-  country: "Russia",
-  value: 580
-}, {
-  country: "South Korea",
-  value: 443
-}, {
-  country: "Canada",
-  value: 441
+  category: "Aesthetic",
+  rating: 2
 }];
 
 xAxis.data.setAll(data);

@@ -168,17 +168,17 @@ series.appear(1000);
 chart.appear(1000, 100);
   
 fearlessButton.onclick = function () { 
-  for (let index = 0; index < 3; ++index) {
+  for (let index = 0; index < 4; ++index) {
     series.data.setIndex(index, fearlessData[index]);
   }
 };
   
-setInterval(function() {
-  series.data.setIndex(1, {
-    category: "Lyrics",
-    rating: (Math.random() * 5)
-  });
-}, 2000)
+// setInterval(function() {
+//  series.data.setIndex(1, {
+//    category: "Lyrics",
+//    rating: (Math.random() * 5)
+//  });
+// }, 2000)
 
 }); // end am5.ready()
   

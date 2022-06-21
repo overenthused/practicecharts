@@ -165,10 +165,10 @@ series.appear(1000);
 chart.appear(1000, 100);
   
 fearlessButton.onclick = function () { 
-  series.data.setIndex(3, {
-    category: "Aesthetic",
-    rating: 4
-  });
+  for (let index = 0; index < 3; ++index) {
+    const element = fearlessData[index];
+    series.data.setIndex(index, element);
+  }
 };
   
 setInterval(function() {
@@ -186,7 +186,16 @@ setInterval(function() {
 <!-- HTML -->
 <div class="biggest-container">
   <div class="button-container">
+    <button class="album-button" id="fearlessButton">Debut</button>
     <button class="album-button" id="fearlessButton">Fearless</button>
+    <button class="album-button" id="fearlessButton">Speak Now</button>
+    <button class="album-button" id="fearlessButton">Red</button>
+    <button class="album-button" id="fearlessButton">1989</button>
+    <button class="album-button" id="fearlessButton">Reputation</button>
+    <button class="album-button" id="fearlessButton">Lover</button>
+    <button class="album-button" id="fearlessButton">folklore</button>
+    <button class="album-button" id="fearlessButton">evermore</button>
+    <button class="album-button" id="fearlessButton">Random</button>
   </div>
   <div id="chartdiv"></div>
 </div>

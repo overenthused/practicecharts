@@ -75,6 +75,8 @@ var series = chart.series.push(am5xy.ColumnSeries.new(root, {
   valueYField: "rating",
   sequencedInterpolation: true,
   categoryXField: "category",
+  interpolationDuration: 2000,
+  interpolationEasing: am5.ease.inOut(am5.ease.elastic),
   tooltip: am5.Tooltip.new(root, {
     labelText:"{valueY}"
   })
